@@ -1,0 +1,1 @@
+const routing = require('./routing/routing.js');
