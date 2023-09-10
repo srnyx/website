@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const {getHost} = require("../host");
 
 const app = express();
 module.exports.app = app;
@@ -12,4 +13,8 @@ require('./redirects.js');
 require('./404.js');
 
 const port = process.env.PORT || 3024;
-app.listen(port, () => console.log(`Server running on ${port}, http://localhost:${port}`));
+app.listen(port, () => {
+    const host = getHost(port);
+    console.log(`Server running at http://${host}`)
+    app.set('subdomain offset', host.split(".").length);
+});
