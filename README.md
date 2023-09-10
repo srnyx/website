@@ -1,2 +1,2 @@
 # srnyx's Website
-A cool website for srnyx
+srnyx's official website of random things, very cool
