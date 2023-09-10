@@ -2,8 +2,8 @@ const {app} = require("./routing.js");
 const fs = require("fs");
 const path = require("path");
 
-app.get("/", (req, res) => {
-    //res.redirect("https://beacons.ai/srnyx")
+app.get("/recapblock", (req, res) => {
+   res.send('{"channels":["movierecapsofficial","filmrecapshere","mysteryrecappedofficial","horrormovierecap6548","deviousrecapofficial","confusingmovies","quickfilms4650","storyrecapped","minutemovies1","jakerecaps","popcornrecap","goodemovies"]}');
 });
 
 app.get("/docs/spigot", (req, res) => {
