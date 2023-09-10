@@ -1,4 +1,4 @@
 function getHost(port) {
-    return "srnyx.com";
+    return "localhost:" + port;
 }
 module.exports.getHost = getHost;
