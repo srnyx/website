@@ -1,3 +1,4 @@
 /.idea
 /.ugly
 /node_modules
+/host.js
