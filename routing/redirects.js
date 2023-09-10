@@ -9,8 +9,6 @@ app.get("/*", (req, res) => {
     const reqSubDomains = req.subdomains;
     const subDomains = reqSubDomains.length === 0 ? ["@"] : reqSubDomains;
     if (subDomains.some(sub => noRedirect.includes(sub))) return;
-    console.log(reqSubDomains)
-    console.log(subDomains)
 
     // Redirect
     const split = req.originalUrl.split("?");
