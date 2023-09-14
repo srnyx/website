@@ -28,7 +28,7 @@ const percentTwenty = ['1.11.2', '1.11.1', '1.11', '1.10.2', '1.10', '1.9.4', '1
 function getPath(version) {
     if (dashes.includes(version)) return path.replace(/[,()]/g, '-');
     if (percentTwenty.includes(version)) return path.replace(',', ',%20');
-    if (version === 'LATEST' && !path.endsWith('.html')) {
+    if (path && version === 'LATEST' && !path.endsWith('.html')) {
         if (!path.includes('#')) return path + '.html';
         if (!path.includes('.html#')) return path.replace('#', '.html#');
         return path;
