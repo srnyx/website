@@ -29,8 +29,9 @@ function getPath(version) {
     if (dashes.includes(version)) return path.replace(/[,()]/g, '-');
     if (percentTwenty.includes(version)) return path.replace(',', ',%20');
     if (version === 'LATEST' && !path.endsWith('.html')) {
-        if (path.includes('#')) return path.replace('#', '.html#');
-        return path + '.html';
+        if (!path.includes('#')) return path + '.html';
+        if (!path.includes('.html#')) return path.replace('#', '.html#');
+        return path;
     }
     return path;
 }
