@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const {getHost} = require("./host");
+const {getHost} = require("../host");
 
 const app = express();
 module.exports.app = app;

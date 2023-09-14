@@ -1,27 +1,27 @@
 const {app} = require("./routing.js");
 
-app.get("/*", (req, res) => {
+app.get("*", (req, res) => {
     // Check protocol
     const protocol = req.protocol;
     if (protocol !== "http" && protocol !== "https") return res.status(400).send("400: Protocol must be http or https");
 
     // Get/check subDomains
     const reqSubDomains = req.subdomains;
-    const subDomains = reqSubDomains.length === 0 ? ["@"] : reqSubDomains;
-    if (subDomains.some(sub => noRedirect.includes(sub))) return;
+    const subDomain = reqSubDomains.length === 0 ? "@" : reqSubDomains[0];
+    if (noRedirect.includes(subDomain)) return;
 
     // Redirect
     const split = req.originalUrl.split("?");
     const searchParams = split[1];
     const searchParamsString = searchParams ? "?" + searchParams : "";
-    res.redirect(handleRequest(subDomains, split[0]) + searchParamsString);
+    res.redirect(getRedirect(subDomain, split[0]) + searchParamsString);
 });
 
-function handleRequest(subDomains, path) {
-    const subObject = object[subDomains[0]];
+function getRedirect(subDomain, path) {
+    const subObject = object[subDomain];
 
     // GitHub
-    if (!subObject) return github(subDomains, path);
+    if (!subObject) return github(subDomain, path);
 
     // Static
     const staticObject = subObject["static"];
@@ -43,14 +43,14 @@ function handleRequest(subDomains, path) {
     if (primary) return primary;
 
     // GitHub
-    if (subObject["github"]) return github(subDomains, path);
+    if (subObject["github"]) return github(subDomain, path);
 
     // Nothing matched
     return "https://beacons.ai/srnyx";
 }
 
-function github(subDomains, path) {
-    const github = "https://github.com/srnyx/" + subDomains[0];
+function github(subDomain, path) {
+    const github = "https://github.com/srnyx/" + subDomain;
     if (path.startsWith("/git")) return github + "/blob/main" + path.replace("/git", "");
     return github + path;
 }
