@@ -22,7 +22,7 @@ app.get("/docs/spigot/*", (req, res) => {
         if (path.endsWith('.html')) path = path.substring(0, path.length - 5);
 
         const split = dataString.split('<head>');
-        split.splice(1, 0, `<meta property="og:title" content=${path} />`);
+        split.splice(1, 0, `<meta property="og:title" content=${path.replaceAll('/', '.')} />`);
         return split[0] + '<head>' + split[1] + split[2].replace("\n    <meta content=\"https://srnyx.com/docs/spigot\" property=\"og:url\" />", '');
     });
 });
