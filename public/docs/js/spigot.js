@@ -2,18 +2,23 @@ const buttons = document.getElementsByClassName('button');
 const path = window.location.href.split('/docs/spigot/')[1];
 
 // Set display path
-let displayPath = path;
-if (displayPath.endsWith('.html')) {
-    displayPath = displayPath.slice(0, -5);
-} else if (displayPath.includes('.html#')) {
-    displayPath = displayPath.replace('.html#', '#')
+if (path) {
+    let displayPath = path;
+    if (displayPath.endsWith('.html')) {
+        displayPath = displayPath.slice(0, -5);
+    } else if (displayPath.includes('.html#')) {
+        displayPath = displayPath.replace('.html#', '#')
+    }
+    document.getElementById('header').textContent = displayPath.replaceAll('/', '.');
 }
-document.getElementById('header').textContent = displayPath.replaceAll('/', '.');
 
 for (const button of buttons) {
     button.addEventListener('click', () => {
         const version = button.textContent;
-        window.location.href = `https://helpch.at/docs/${version}/${getPath(version)}`;
+        const compiledPath = getPath(version);
+        let url = `https://helpch.at/docs/${version}`;
+        if (compiledPath) url += `/${compiledPath}`;
+        window.location.href = url;
     });
 }
 

@@ -1,14 +1,3 @@
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: rgb(48,48,48);
-    color: silver;
-    text-shadow: black 2px 2px 0;
-}
-
-#header {
-    text-align: center;
-}
-
 b {
     display: inline-block;
     width: 33px;
