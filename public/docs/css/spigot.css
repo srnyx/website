@@ -4,12 +4,12 @@ b {
 }
 
 .buttons {
-    width: 460px;
-    margin-left: calc(50vw - (380px / 2));
+    width: 530px;
+    margin-left: calc(50vw - (530px / 2));
 }
 
 .button {
-    width: 50px;
+    width: 60px;
     text-align: center;
     margin: 5px 3px 8px;
     padding-top: 5px;
