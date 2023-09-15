@@ -26,9 +26,10 @@ const dashes = ['1.15.2', '1.15.1', '1.15', '1.14.4', '1.14.3', '1.14.2', '1.14.
 const percentTwenty = ['1.11.2', '1.11.1', '1.11', '1.10.2', '1.10', '1.9.4', '1.9.2', '1.9.1', '1.9', '1.8.8', '1.8.7', '1.8.6', '1.8.5', '1.8.4', '1.8.3', '1.8', '1.7.10', '1.7.9', '1.7.8', '1.7.5', '1.7.2', '1.6.2', '1.5']
 
 function getPath(version) {
+    if (!path) return;
     if (dashes.includes(version)) return path.replace(/[,()]/g, '-');
     if (percentTwenty.includes(version)) return path.replace(',', ',%20');
-    if (path && version === 'LATEST' && !path.endsWith('.html')) {
+    if (version === 'LATEST' && !path.endsWith('.html')) {
         if (!path.includes('#')) return path + '.html';
         if (!path.includes('.html#')) return path.replace('#', '.html#');
         return path;

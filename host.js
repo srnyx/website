@@ -1,4 +1,2 @@
-function getHost(port) {
-    return `localhost:${port}`;
-}
-module.exports.getHost = getHost;
+// Replace `localhost:${port}` with your host
+module.exports.getHost = port => `localhost:${port}`;

@@ -1,3 +1,7 @@
+#header {
+    margin-bottom: 15px;
+}
+
 b {
     display: inline-block;
     width: 33px;
@@ -17,8 +21,8 @@ b {
     background-color: #1b4958;
     font-family: 'Montserrat', sans-serif;
     color: gainsboro;
-    border-width: 0;
-    border-color: black;
     box-shadow: black 2px 2px 0;
     cursor: pointer;
+    border: 0 solid black;
+    border-radius: 5px;
 }

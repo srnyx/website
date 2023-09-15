@@ -10,7 +10,6 @@ app.use(express.static(path.join(__dirname, "../public")));
 // All routes
 require('./pages.js');
 require('./redirects.js');
-require('./404.js');
 
 const port = process.env.PORT || 30015;
 app.listen(port, () => {
