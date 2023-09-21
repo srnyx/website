@@ -1,18 +1,19 @@
 #header {
+    margin-top: 0;
     margin-bottom: 15px;
 }
 
-b {
+.buttons b {
     display: inline-block;
     width: 33px;
 }
 
 .buttons {
     width: 530px;
-    margin-left: calc(50vw - (530px / 2));
+    margin: 0 auto;
 }
 
-.button {
+.versionButton {
     width: 60px;
     text-align: center;
     margin: 5px 3px 8px;

@@ -1,0 +1,21 @@
+main {
+  background-color: #133541;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-color: #3A9BC0;
+  border-style: solid;
+  border-width: 3px;
+}
+
+main a {
+  color: #3a9bc0;
+  text-decoration: none;
+  font-size: 30px;
+  line-height: 50px;
+}

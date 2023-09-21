@@ -1,0 +1,200 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-image: url("https://us-east-1.tixte.net/uploads/img.srnyx.xyz/banner.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.commonButton {
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  width: 200px;
+  height: 50px;
+  line-height: 48px;
+  color: #3a9bc0;
+  border: 1px solid #3a9bc0;
+  background-color: #061316;
+  transition: background-color, color;
+  transition-timing-function: ease;
+  transition-duration: 200ms;
+}
+.commonButton:hover {
+  border-width: 3px;
+  line-height: 45px;
+}
+.commonButton:active {
+  background-color: #3a9bc0;
+  color: #061316;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #282828;
+}
+::-webkit-scrollbar-track {
+  background: #282828;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a9bc0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #20576B;
+}
+
+main {
+  margin: 10px 270px;
+  color: gainsboro;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #282828;
+  border-right: 5px solid #1F1F1F;
+  z-index: 10;
+}
+
+.logo {
+  width: 150px;
+  display: block;
+  margin: 20px auto 100px;
+}
+
+nav .navButtons {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+nav .navButton {
+  display: block;
+  margin: 20px auto 50px;
+}
+
+nav .navSocials {
+  position: absolute;
+  bottom: 100px;
+  display: flex;
+}
+
+nav .navSocial {
+  width: 50px;
+  height: 50px;
+  margin-left: 50px;
+  transition: transform 200ms ease;
+}
+nav .navSocial:hover {
+  transform: scale(1.1);
+}
+
+nav .name {
+  width: 200px;
+  display: block;
+  margin: 20px auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.toggleNav {
+  top: 0;
+  margin: 10px;
+  color: gainsboro;
+  text-decoration: none;
+  font-size: 30px !important;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform;
+  transition-timing-function: ease;
+  transition-duration: 400ms;
+}
+
+#hideNav {
+  position: absolute;
+  right: 0;
+}
+#hideNav:hover {
+  animation: left 1s ease infinite;
+}
+@keyframes left {
+	0%, 20%, 50%, 80%, 100% {transform: translateX(0);}
+	40% {transform: translateX(-10px);}
+	60% {transform: translateX(-5px);}
+}
+
+#showNav {
+  position: fixed;
+  left: 0;
+}
+#showNav:hover {
+  animation: right 1s ease infinite;
+}
+@keyframes right {
+	0%, 20%, 50%, 80%, 100% {transform: translateX(0);}
+	40% {transform: translateX(10px);}
+	60% {transform: translateX(5px);}
+}
+
+.links {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #282828;
+  border-left: 5px solid #1F1F1F;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.links a {
+  display: block;
+  margin: auto;
+}
+
+.tuna {
+  position: fixed;
+  top: 950px;
+  left: 10px;
+  width: 50px;
+  height: auto;
+  z-index: 5;
+}
+
+.tuna img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  margin-left: 10px;
+  margin-bottom: 50px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform;
+  transition-timing-function: ease;
+  transition-duration: 500ms;
+}
+.tuna img:hover {
+  transform: scale(1.25);
+}

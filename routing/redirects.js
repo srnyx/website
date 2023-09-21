@@ -1,6 +1,6 @@
 const {app} = require("./routing.js");
 
-app.get("*", (req, res) => {
+app.get("*", (req, res, next) => {
     // Check protocol
     const protocol = req.protocol;
     if (protocol !== "http" && protocol !== "https") return res.status(400).send("400: Protocol must be http or https");
@@ -10,11 +10,15 @@ app.get("*", (req, res) => {
     const subDomain = reqSubDomains.length === 0 ? "@" : reqSubDomains[0];
     if (noRedirect.includes(subDomain)) return;
 
-    // Redirect
+    // Get redirect
     const split = req.originalUrl.split("?");
     const searchParams = split[1];
     const searchParamsString = searchParams ? "?" + searchParams : "";
-    res.redirect(getRedirect(subDomain, split[0]) + searchParamsString);
+    const redirect = getRedirect(subDomain, split[0]);
+
+    // Redirect/next
+    if (redirect) return res.redirect(redirect + searchParamsString);
+    next();
 });
 
 function getRedirect(subDomain, path) {
@@ -44,9 +48,6 @@ function getRedirect(subDomain, path) {
 
     // GitHub
     if (subObject["github"]) return github(subDomain, path);
-
-    // Nothing matched
-    return "https://beacons.ai/srnyx";
 }
 
 function github(subDomain, path) {
@@ -97,6 +98,7 @@ const object = {
             "/github": "https://github.com/srnyx",
             "/roblox": "https://roblox.com/users/108251343",
             "/twitter": "https://twitter.com/srnyx",
+            "/x": "https://twitter.com/srnyx",
             "/twitch": "https://twitch.tv/srnyx",
             "/instagram": "https://instagram.com/realsrnyx",
             "/threads": "https://threads.net/realsrnyx",

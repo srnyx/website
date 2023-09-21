@@ -1,0 +1,18 @@
+main h1 {
+  margin-bottom: 0;
+}
+
+main img {
+  max-width: 300px;
+  max-height: 300px;
+  margin: 10px;
+  border: 3px solid #3a9bc0;
+  border-radius: 10px;
+}
+main img:hover {
+  transform: scale(1.4);
+  transition: transform 0.5s ease, filter 0.5s ease;
+  position: relative;
+  border-style: dashed;
+  z-index: 1;
+}

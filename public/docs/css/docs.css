@@ -1,14 +1,7 @@
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: rgb(48,48,48);
-    color: silver;
-    text-shadow: black 2px 2px 0;
-}
-
 h1 {
     text-align: center;
 }
 
-a {
+main a {
     color: silver;
 }

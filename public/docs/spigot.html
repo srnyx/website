@@ -8,106 +8,111 @@
     <meta content="Spigot Javadocs" property="og:title" />
     <meta content="Easily share Bukkit/Spigot Javadoc members across any Minecraft version!
     Made by srnyx ❤️" property="og:description" />
-    <meta property="og:type" content="website" />
-    <link type="application/json+oembed" href="https://paste.srnyx.com/idepufufaj.json"/>
+    <meta name="theme-color" content="#1B4249">
+    <meta property="og:type" content="website"/>
+    <link type="application/json+oembed" href="https://paste.srnyx.com/atesagarew.json"/>
 
+    <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/docs/css/docs.css">
     <link rel="stylesheet" href="/docs/css/spigot.css">
+
+    <script src="/js/common.js" defer></script>
     <script src="/docs/js/spigot.js" defer></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/033eae2f57.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
+<button id="showNav" class="toggleNav hidden material-symbols-outlined">arrow_right_alt</button>
+<nav></nav>
 
-<h1 id="header">Spigot Docs</h1>
+<main>
+    <h1 id="header">Spigot Docs</h1>
 
-<div style="text-align: center">
-    <button class="button">LATEST</button><br>
-</div>
+    <div style="text-align: center"><button class="versionButton">LATEST</button><br></div>
 
-<div class="buttons">
-    <b>1.19:</b>
-    <button class="button">1.19.3</button>
-    <button class="button">1.19.2</button>
-    <button class="button">1.19.1</button>
-    <button class="button">1.19</button><br>
+    <div class="buttons">
+        <b>1.19:</b>
+        <button class="versionButton">1.19.3</button>
+        <button class="versionButton">1.19.2</button>
+        <button class="versionButton">1.19.1</button>
+        <button class="versionButton">1.19</button><br>
 
-    <b>1.18:</b>
-    <button class="button">1.18.2</button>
-    <button class="button">1.18.1</button>
-    <button class="button">1.18</button><br>
+        <b>1.18:</b>
+        <button class="versionButton">1.18.2</button>
+        <button class="versionButton">1.18.1</button>
+        <button class="versionButton">1.18</button><br>
 
-    <b>1.17:</b>
-    <button class="button">1.17.1</button>
-    <button class="button">1.17</button><br>
+        <b>1.17:</b>
+        <button class="versionButton">1.17.1</button>
+        <button class="versionButton">1.17</button><br>
 
-    <b>1.16:</b>
-    <button class="button">1.16.5</button>
-    <button class="button">1.16.4</button>
-    <button class="button">1.16.3</button>
-    <button class="button">1.16.2</button>
-    <button class="button">1.16.1</button><br>
+        <b>1.16:</b>
+        <button class="versionButton">1.16.5</button>
+        <button class="versionButton">1.16.4</button>
+        <button class="versionButton">1.16.3</button>
+        <button class="versionButton">1.16.2</button>
+        <button class="versionButton">1.16.1</button><br>
 
-    <b>1.15:</b>
-    <button class="button">1.15.2</button>
-    <button class="button">1.15.1</button>
-    <button class="button">1.15</button><br>
+        <b>1.15:</b>
+        <button class="versionButton">1.15.2</button>
+        <button class="versionButton">1.15.1</button>
+        <button class="versionButton">1.15</button><br>
 
-    <b>1.14:</b>
-    <button class="button">1.14.4</button>
-    <button class="button">1.14.3</button>
-    <button class="button">1.14.2</button>
-    <button class="button">1.14.1</button>
-    <button class="button">1.14</button><br>
+        <b>1.14:</b>
+        <button class="versionButton">1.14.4</button>
+        <button class="versionButton">1.14.3</button>
+        <button class="versionButton">1.14.2</button>
+        <button class="versionButton">1.14.1</button>
+        <button class="versionButton">1.14</button><br>
 
-    <b>1.13:</b>
-    <button class="button">1.13.2</button>
-    <button class="button">1.13.1</button>
-    <button class="button">1.13</button><br>
+        <b>1.13:</b>
+        <button class="versionButton">1.13.2</button>
+        <button class="versionButton">1.13.1</button>
+        <button class="versionButton">1.13</button><br>
 
-    <b>1.12:</b>
-    <button class="button">1.12.2</button>
-    <button class="button">1.12.1</button>
-    <button class="button">1.12</button><br>
+        <b>1.12:</b>
+        <button class="versionButton">1.12.2</button>
+        <button class="versionButton">1.12.1</button>
+        <button class="versionButton">1.12</button><br>
 
-    <b>1.11:</b>
-    <button class="button">1.11.2</button>
-    <button class="button">1.11.1</button>
-    <button class="button">1.11</button><br>
+        <b>1.11:</b>
+        <button class="versionButton">1.11.2</button>
+        <button class="versionButton">1.11.1</button>
+        <button class="versionButton">1.11</button><br>
 
-    <b>1.10:</b>
-    <button class="button">1.10.2</button>
-    <button class="button">1.10</button><br>
+        <b>1.10:</b>
+        <button class="versionButton">1.10.2</button>
+        <button class="versionButton">1.10</button><br>
 
-    <b>1.9:</b>
-    <button class="button">1.9.4</button>
-    <button class="button">1.9.2</button>
-    <button class="button">1.9</button><br>
+        <b>1.9:</b>
+        <button class="versionButton">1.9.4</button>
+        <button class="versionButton">1.9.2</button>
+        <button class="versionButton">1.9</button><br>
 
-    <b>1.8:</b>
-    <button class="button">1.8.8</button>
-    <button class="button">1.8.7</button>
-    <button class="button">1.8.6</button>
-    <button class="button">1.8.5</button>
-    <button class="button">1.8.4</button>
-    <button class="button">1.8.3</button>
-    <button class="button">1.8</button><br>
+        <b>1.8:</b>
+        <button class="versionButton">1.8.8</button>
+        <button class="versionButton">1.8.7</button>
+        <button class="versionButton">1.8.6</button>
+        <button class="versionButton">1.8.5</button>
+        <button class="versionButton">1.8.4</button>
+        <button class="versionButton">1.8.3</button>
+        <button class="versionButton">1.8</button><br>
 
-    <b>1.7:</b>
-    <button class="button">1.7.10</button>
-    <button class="button">1.7.9</button>
-    <button class="button">1.7.8</button>
-    <button class="button">1.7.5</button>
-    <button class="button">1.7.2</button><br>
+        <b>1.7:</b>
+        <button class="versionButton">1.7.10</button>
+        <button class="versionButton">1.7.9</button>
+        <button class="versionButton">1.7.8</button>
+        <button class="versionButton">1.7.5</button>
+        <button class="versionButton">1.7.2</button><br>
 
-    <b>1.6:</b>
-    <button class="button">1.6.2</button><br>
+        <b>1.6:</b>
+        <button class="versionButton">1.6.2</button><br>
 
-    <b>1.5:</b>
-    <button class="button">1.5</button>
-</div>
+        <b>1.5:</b>
+        <button class="versionButton">1.5</button>
+    </div>
+</main>
 
+<div class="links"></div>
 </body>
 </html>
