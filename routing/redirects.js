@@ -14,7 +14,7 @@ app.get("*", (req, res, next) => {
     const split = req.originalUrl.split("?");
     const searchParams = split[1];
     const searchParamsString = searchParams ? "?" + searchParams : "";
-    const redirect = getRedirect(subDomain, split[0]);
+    const redirect = getRedirect(subDomain, split[0].slice(1));
 
     // Redirect/next
     if (redirect) return res.redirect(redirect + searchParamsString);
@@ -36,11 +36,11 @@ function getRedirect(subDomain, path) {
 
     // Dynamic
     const dynamic = subObject["dynamic"];
-    if (dynamic) for (let [key, value] of dynamic) if (path.startsWith(key)) return value + path;
+    if (dynamic) for (const [key, value] of Object.entries(dynamic)) if (path.startsWith(key)) return `${value}/${path}`;
 
     // Dynamic Replace
     const dynamicReplace = subObject["dynamicReplace"];
-    if (dynamicReplace) for (const [key, value] of Object.entries(dynamicReplace)) if (path.startsWith(key)) return value + path.replace(key, '');
+    if (dynamicReplace) for (const [key, value] of Object.entries(dynamicReplace)) if (path.startsWith(`${key}/`) || path === key) return `${value}/${path.slice(key.length + 1)}`;
 
     // Primary
     const primary = subObject["primary"];
@@ -51,8 +51,9 @@ function getRedirect(subDomain, path) {
 }
 
 function github(subDomain, path) {
-    const github = "https://github.com/srnyx/" + subDomain;
-    if (path.startsWith("/git")) return github + "/blob/main" + path.replace("/git", "");
+    const github = `https://github.com/srnyx/${subDomain}/`;
+    if (path.startsWith('git/')) return `${github}blob/master${path.slice(3)}`;
+    if (path === 'git') return `${github}blob/master`;
     return github + path;
 }
 
@@ -61,8 +62,7 @@ const noRedirect = [
     "paste",
     "go-to",
     "img",
-    "media"
-]
+    "media"]
 
 // All the redirections, @ is root
 // Subsections: primary (string), static (object),
@@ -70,97 +70,100 @@ const object = {
     "@": {
         static: {
             // Music
-            "/spotify": "https://open.spotify.com/user/4ahrhexooug5ds02cuxwk7xuc",
-            "/playlist": "https://open.spotify.com/playlist/76YPSzrTgG2lujDtqHncxk",
-            "/pl": "https://srnyx.com/playlist",
-            "/pinterest": "https://pinterest.com/srnyx",
-            "/soundcloud": "https://soundcloud.com/srnyx",
-            "/deezer": "https://deezer.com/us/profile/4374228162",
-            "/bandcamp": "https://bandcamp.com/srnyx",
+            "spotify": "https://open.spotify.com/user/4ahrhexooug5ds02cuxwk7xuc",
+            "playlist": "https://open.spotify.com/playlist/76YPSzrTgG2lujDtqHncxk",
+            "pl": "https://srnyx.com/playlist",
+            "pinterest": "https://pinterest.com/srnyx",
+            "soundcloud": "https://soundcloud.com/srnyx",
+            "deezer": "https://deezer.com/us/profile/4374228162",
+            "bandcamp": "https://bandcamp.com/srnyx",
             // Minecraft
-            "/modrinth": "https://modrinth.com/user/srnyx",
-            "/hangar": "https://hangar.papermc.io/srnyx",
-            "/polymart": "https://polymart.org/user/759",
-            "/spigot": "https://spigotmc.org/members/705071",
-            "/builtbybit": "https://builtbybit.com/members/252862",
-            "/bukkit": "https://dev.bukkit.org/members/srnyx",
-            "/curseforge": "https://curseforge.com/members/srnyxlive",
-            "/api": "https://annoying-api.srnyx.com",
-            "/modpack": "https://modpack.srnyx.com",
-            "/bstats": "https://bstats.org/author/srnyx",
+            "modrinth": "https://modrinth.com/user/srnyx",
+            "hangar": "https://hangar.papermc.io/srnyx",
+            "polymart": "https://polymart.org/user/759",
+            "spigot": "https://spigotmc.org/members/705071",
+            "builtbybit": "https://builtbybit.com/members/252862",
+            "bukkit": "https://dev.bukkit.org/members/srnyx",
+            "curseforge": "https://curseforge.com/members/srnyxlive",
+            "api": "https://annoying-api.srnyx.com",
+            "modpack": "https://modpack.srnyx.com",
+            "bstats": "https://bstats.org/author/srnyx",
             // Discord
-            "/discord": "https://dsc.gg/srnyx",
-            "/bio": "https://discords.com/bio/p/srnyx",
-            "/bots": "https://docs.google.com/document/d/e/2PACX-1vTNYYfb-Piv8T3jEbFbi3OXV6v0U8Oj974umNSI3c8seFzAZaPdtImKI4stf5vV1vro8B3hzyX9wLbI/pub",
-            "/lofi": "https://top.gg/bot/830530156048285716",
+            "discord": "https://dsc.gg/srnyx",
+            "bio": "https://discords.com/bio/p/srnyx",
+            "bots": "https://docs.google.com/document/d/e/2PACX-1vTNYYfb-Piv8T3jEbFbi3OXV6v0U8Oj974umNSI3c8seFzAZaPdtImKI4stf5vV1vro8B3hzyX9wLbI/pub",
+            "lofi": "https://top.gg/bot/830530156048285716",
             // Social
-            "/media": "https://beacons.ai/srnyx/mediakit",
-            "/github": "https://github.com/srnyx",
-            "/roblox": "https://roblox.com/users/108251343",
-            "/twitter": "https://twitter.com/srnyx",
-            "/x": "https://twitter.com/srnyx",
-            "/twitch": "https://twitch.tv/srnyx",
-            "/instagram": "https://instagram.com/realsrnyx",
-            "/threads": "https://threads.net/realsrnyx",
-            "/reddit": "https://reddit.com/user/srnyx",
-            "/youtube": "https://youtube.com/channel/UCZvkqbMtvejbV6MtPij0c6Q",
-            "/tiktok": "https://tiktok.com/@srnyx_",
-            "/medium": "https://medium.com/@srnyx",
-            "/tumblr": "https://tumblr.com/srnyx",
+            "media": "https://beacons.ai/srnyx/mediakit",
+            "github": "https://github.com/srnyx",
+            "gitlab": "https://gitlab.com/srnyx",
+            "roblox": "https://roblox.com/users/108251343",
+            "twitter": "https://twitter.com/srnyx",
+            "x": "https://twitter.com/srnyx",
+            "twitch": "https://twitch.tv/srnyx",
+            "instagram": "https://instagram.com/realsrnyx",
+            "threads": "https://threads.net/realsrnyx",
+            "reddit": "https://reddit.com/user/srnyx",
+            "youtube": "https://youtube.com/channel/UCZvkqbMtvejbV6MtPij0c6Q",
+            "tiktok": "https://tiktok.com/@srnyx_",
+            "medium": "https://medium.com/@srnyx",
+            "tumblr": "https://tumblr.com/srnyx",
             // Templates
-            "/templates": "https://beacons.ai/srnyx/templates",
-            "/templates/simple": "https://xenon.bot/templates/r2uhQjNFKYHA",
-            "/templates/gaming": "https://xenon.bot/templates/xAkHWYehWD26",
-            "/templates/classroom": "https://xenon.bot/templates/mv723zHUBktr",
-            "/templates/studygroup": "https://xenon.bot/templates/DVyUKAVGz8uy",
-            "/templates/personal": "https://xenon.bot/templates/adcVcMg7tV7q",
-            "/templates/one": "https://xenon.bot/templates/ENe3dpAwNkMC",
-            "/templates/minecraft": "https://github.com/srnyx/mc-server-templates",
-            "/template/mc": "https://github.com/srnyx/mc-server-templates",
+            "templates": "https://beacons.ai/srnyx/templates",
+            "templates/simple": "https://xenon.bot/templates/r2uhQjNFKYHA",
+            "templates/gaming": "https://xenon.bot/templates/xAkHWYehWD26",
+            "templates/classroom": "https://xenon.bot/templates/mv723zHUBktr",
+            "templates/studygroup": "https://xenon.bot/templates/DVyUKAVGz8uy",
+            "templates/personal": "https://xenon.bot/templates/adcVcMg7tV7q",
+            "templates/one": "https://xenon.bot/templates/ENe3dpAwNkMC",
+            "templates/minecraft": "https://github.com/srnyx/mc-server-templates",
+            "template/mc": "https://github.com/srnyx/mc-server-templates",
             // Miscellaneous
-            "/disabled": "https://docs.google.com/document/d/e/2PACX-1vRDtSEco8rAS6gbMSgHo5Bk0QJzWs54sclZT-r8GLlgDWYghyU4yrhI6R9FpwNqWDWV25j955JCzKG_/pub",
-            "/donate": "https://ko-fi.com/srnyx",
-            "/review": "https://trustpilot.com/evaluate/srnyx.xyz",
-            "/reviews": "https://trustpilot.com/review/srnyx.xyz",
-            "/venox": "https://venox.network",
-            "/ai": "https://beta.character.ai/c/XrqPCrB3GheLszW9W3ZGLx92Pyw2v9Zcn9wJhEjncr4",
-            "/sywf": "https://chrome.google.com/webstore/detail/simple-youtube-windowed-fullscreen/pbihmiiillncegkbfnfkmlcjkpagehgh",
-            "/pc": "https://pcpartpicker.com/user/srnyx/saved/F9X7wP",
-            "/vimeo": "https://vimeo.com/srnyx",
-            "/ko-fi": "https://ko-fi.com/srnyx",
-            "/paypal": "https://venox.network/paypal",
-            "/stripe": "https://venox.network/stripe",
-            "/sponsor": "https://github.com/sponsors/srnyx"
-        },
-        "dynamicReplace": {
-            "/git": "https://github.com/srnyx"
+            "disabled": "https://docs.google.com/document/d/e/2PACX-1vRDtSEco8rAS6gbMSgHo5Bk0QJzWs54sclZT-r8GLlgDWYghyU4yrhI6R9FpwNqWDWV25j955JCzKG_/pub",
+            "donate": "https://ko-fi.com/srnyx",
+            "review": "https://trustpilot.com/evaluate/srnyx.xyz",
+            "reviews": "https://trustpilot.com/review/srnyx.xyz",
+            "venox": "https://venox.network",
+            "ai": "https://beta.character.ai/c/XrqPCrB3GheLszW9W3ZGLx92Pyw2v9Zcn9wJhEjncr4",
+            "sywf": "https://chrome.google.com/webstore/detail/simple-youtube-windowed-fullscreen/pbihmiiillncegkbfnfkmlcjkpagehgh",
+            "pc": "https://pcpartpicker.com/user/srnyx/saved/F9X7wP",
+            "vimeo": "https://vimeo.com/srnyx",
+            "ko-fi": "https://ko-fi.com/srnyx",
+            "paypal": "https://venox.network/paypal",
+            "stripe": "https://venox.network/stripe",
+            "sponsor": "https://github.com/sponsors/srnyx"
+        }
+    },
+    seg: {
+        dynamic: {
+            "": "https://sites.google.com/view/srnyxevents",
         }
     },
     chrome: {
         static: {
-            "/sywf": "https://chrome.google.com/webstore/detail/simple-youtube-windowed-f/pbihmiiillncegkbfnfkmlcjkpagehgh",
-            "/recapblock": "https://chrome.google.com/webstore/detail/recapblock/"
+            "sywf": "https://chrome.google.com/webstore/detail/simple-youtube-windowed-f/pbihmiiillncegkbfnfkmlcjkpagehgh",
+            "recapblock": "https://chrome.google.com/webstore/detail/recapblock/"
         }
     },
     "annoying-api": {
         github: true,
         static: {
-            "/modrinth": "https://modrinth.com/plugin/annoying-api",
-            "/hangar": "https://hangar.papermc.io/srnyx/AnnoyingAPI",
-            "/polymart": "https://polymart.org/resource/3238",
-            "/builtbybit": "https://builtbybit.com/resources/26658",
-            "/spigot": "https://spigotmc.org/resources/106637",
-            "/bukkit": "https://dev.bukkit.org/projects/annoying-api",
-            "/snapshot": "https://github.com/srnyx/annoying-api/actions/workflows/build.yml",
-            "/javadocs": "https://jitpack.io/com/github/srnyx/annoying-api/latest/javadoc/",
-            "/jitpack": "https://jitpack.io/#xyz.srnyx/annoying-api",
-            "/plugins": "https://github.com/srnyx/annoying-api/discussions/categories/annoying-api-plugins"
+            "modrinth": "https://modrinth.com/plugin/annoying-api",
+            "hangar": "https://hangar.papermc.io/srnyx/AnnoyingAPI",
+            "polymart": "https://polymart.org/resource/3238",
+            "builtbybit": "https://builtbybit.com/resources/26658",
+            "spigot": "https://spigotmc.org/resources/106637",
+            "bukkit": "https://dev.bukkit.org/projects/annoying-api",
+            "snapshot": "https://github.com/srnyx/annoying-api/actions/workflows/build.yml",
+            "javadocs": "https://jitpack.io/com/github/srnyx/annoying-api/latest/javadoc/",
+            "jitpack": "https://jitpack.io/#xyz.srnyx/annoying-api",
+            "plugins": "https://github.com/srnyx/annoying-api/discussions/categories/annoying-api-plugins"
         }
     },
     "gradle-galaxy": {
         github: true,
         static: {
-            "/gradle": "https://plugins.gradle.org/plugin/xyz.srnyx.gradle-galaxy"
+            "gradle": "https://plugins.gradle.org/plugin/xyz.srnyx.gradle-galaxy"
         }
     }
 }

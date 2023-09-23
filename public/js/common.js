@@ -47,7 +47,7 @@ if (nav) {
     const showNav = document.getElementById('showNav');
     document.getElementById('hideNav').addEventListener('click', () => {
         let position = 0;
-        let id = setInterval(() => {
+        const id = setInterval(() => {
             position -= 5;
             nav.style.left = position + 'px';
             if (position !== -260) return;
@@ -61,7 +61,7 @@ if (nav) {
         showNav.classList.add('hidden');
 
         let position = -260;
-        let id = setInterval(() => {
+        const id = setInterval(() => {
             position += 5;
             nav.style.left = position + 'px';
             if (position === 0) clearInterval(id);
@@ -71,13 +71,11 @@ if (nav) {
 
 const links = document.getElementsByClassName('links')[0];
 if (links) links.innerHTML = `
-    <a class="commonButton" href="/twitter"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
-    <a class="commonButton" href="/twitch"><i class="fa-brands fa-twitch"></i> Twitch</a>
-    <a class="commonButton" href="/roblox"><i class="fa-regular fa-square"></i> Roblox</a>
-    <a class="commonButton" href="/reddit"><i class="fa-brands fa-reddit-alien"></i> Reddit</a>
-    <a class="commonButton" href="/youtube"><i class="fa-brands fa-youtube"></i> YouTube</a>
-    <a class="commonButton" href="/steam"><i class="fa-brands fa-steam-symbol"></i> Steam</a>
-    <a class="commonButton" href="/gitlab"><i class="fa-brands fa-gitlab"></i> GitLab</a>
-    <a class="commonButton" href="/instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
-    <a class="commonButton" href="/tiktok"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+    <a class="commonButton" href="/twitter" target="_blank"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
+    <a class="commonButton" href="/twitch" target="_blank"><i class="fa-brands fa-twitch"></i> Twitch</a>
+    <a class="commonButton" href="/roblox" target="_blank"><i class="fa-solid fa-square" style="rotate: 10deg"></i> Roblox</a>
+    <a class="commonButton" href="/reddit" target="_blank"><i class="fa-brands fa-reddit-alien"></i> Reddit</a>
+    <a class="commonButton" href="/youtube" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a>
+    <a class="commonButton" href="/steam" target="_blank"><i class="fa-brands fa-steam-symbol"></i> Steam</a>
+    <a class="commonButton" href="/spotify" target="_blank"><i class="fa-brands fa-spotify"></i> Spotify</a>
 `
