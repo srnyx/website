@@ -1,4 +1,4 @@
-const buttons = document.getElementsByClassName('commonButton');
+const buttons = document.getElementsByClassName('versionButton');
 const path = window.location.href.split('/docs/spigot/')[1];
 
 // Set display path
