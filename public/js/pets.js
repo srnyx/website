@@ -14,10 +14,10 @@ fetch('/petImages')
         const images = main.getElementsByTagName('img');
         for (const image of images) {
             image.addEventListener('mouseover', () => {
-                for (const img of images) if (img !== image) img.style.filter = 'blur(3px)';
+                for (const img of image.parentNode.getElementsByTagName('img')) if (img !== image) img.style.filter = 'blur(3px)';
             });
             image.addEventListener('mouseout', () => {
-                for (const img of images) img.style.filter = '';
+                for (const img of image.parentNode.getElementsByTagName('img')) img.style.filter = '';
             });
         }
     });
