@@ -2,9 +2,12 @@ const fs = require("fs");
 const path = require("path");
 const {app} = require("./routing.js");
 const {handle} = require("./utilities");
+const cors = require('cors');
 
+// recapblock
+app.use('/recapblock', cors({ origin: ['https://youtube.com', 'https://www.youtube.com'] }));
 app.get("/recapblock", (req, res) => {
-   res.send('{"channels":["movierecapsofficial","filmrecapshere","mysteryrecappedofficial","horrormovierecap6548","deviousrecapofficial","confusingmovies","quickfilms4650","storyrecapped","minutemovies1","jakerecaps","popcornrecap","goodemovies"]}');
+    res.send('{"channels":["movierecapsofficial","filmrecapshere","mysteryrecappedofficial","horrormovierecap6548","deviousrecapofficial","confusingmovies","quickfilms4650","storyrecapped","minutemovies1","jakerecaps","popcornrecap","goodemovies","movierecaps_","foxrecaps","filmstoryrecapped"]}');
 });
 
 app.get("/petImages", (req, res) => {
