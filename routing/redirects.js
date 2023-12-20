@@ -108,6 +108,7 @@ const object = {
             "tiktok": "https://tiktok.com/@srnyx_",
             "medium": "https://medium.com/@srnyx",
             "tumblr": "https://tumblr.com/srnyx",
+            "steam": "https://steamcommunity.com/id/srnyx",
             // Templates
             "templates": "https://beacons.ai/srnyx/templates",
             "templates/simple": "https://xenon.bot/templates/r2uhQjNFKYHA",
