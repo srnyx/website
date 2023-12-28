@@ -7,7 +7,7 @@ const cors = require('cors');
 // recapblock
 app.use('/recapblock', cors({ origin: ['https://youtube.com', 'https://www.youtube.com'] }));
 app.get("/recapblock", (req, res) => {
-    res.send('{"channels":["movierecapsofficial","filmrecapshere","mysteryrecappedofficial","horrormovierecap6548","deviousrecapofficial","confusingmovies","quickfilms4650","storyrecapped","minutemovies1","jakerecaps","popcornrecap","goodemovies","movierecaps_","foxrecaps","filmstoryrecapped"]}');
+    res.send('{"channels":["movierecapsofficial","filmrecapshere","mysteryrecappedofficial","horrormovierecap6548","deviousrecapofficial","confusingmovies","quickfilms4650","storyrecapped","minutemovies1","jakerecaps","popcornrecap","goodemovies","movierecaps_","foxrecaps","filmstoryrecapped","movieclub0505","clock7x","filmcrop"]}');
 });
 
 app.get("/petImages", (req, res) => {
