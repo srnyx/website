@@ -51,6 +51,18 @@ app.get("/pets", (req, res) => {
     handle(res, "/pets.html");
 });
 
+app.get("/water", (req, res) => {
+    handle(res, "/water.html");
+});
+
+app.get("/water/addresses", (req, res) => {
+    handle(res, "assets/water/flint_address_data.csv");
+});
+
+app.get("/water/leads", (req, res) => {
+    handle(res, "assets/water/flint_lead_data.csv");
+});
+
 const petsJson = {};
 fs.readdir(path.join(__dirname, '../public/assets/pets'), (err, folders) => {
     if (err) return console.error(err);
