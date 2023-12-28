@@ -72,7 +72,7 @@ const object = {
             // Music
             "spotify": "https://open.spotify.com/user/4ahrhexooug5ds02cuxwk7xuc",
             "playlist": "https://open.spotify.com/playlist/76YPSzrTgG2lujDtqHncxk",
-            "pl": "https://srnyx.com/playlist",
+            "pl": "https://open.spotify.com/playlist/76YPSzrTgG2lujDtqHncxk",
             "pinterest": "https://pinterest.com/srnyx",
             "soundcloud": "https://soundcloud.com/srnyx",
             "deezer": "https://deezer.com/us/profile/4374228162",
@@ -85,8 +85,8 @@ const object = {
             "builtbybit": "https://builtbybit.com/members/252862",
             "bukkit": "https://dev.bukkit.org/members/srnyx",
             "curseforge": "https://curseforge.com/members/srnyxlive",
-            "api": "https://annoying-api.srnyx.com",
-            "modpack": "https://modpack.srnyx.com",
+            "api": "https://github.com/srnyx/annoying-api",
+            "modpack": "https://github.com/srnyx/modpack",
             "bstats": "https://bstats.org/author/srnyx",
             // Discord
             "discord": "https://dsc.gg/srnyx",
@@ -109,6 +109,7 @@ const object = {
             "medium": "https://medium.com/@srnyx",
             "tumblr": "https://tumblr.com/srnyx",
             "steam": "https://steamcommunity.com/id/srnyx",
+            "vimeo": "https://vimeo.com/srnyx",
             // Templates
             "templates": "https://beacons.ai/srnyx/templates",
             "templates/simple": "https://xenon.bot/templates/r2uhQjNFKYHA",
@@ -119,20 +120,20 @@ const object = {
             "templates/one": "https://xenon.bot/templates/ENe3dpAwNkMC",
             "templates/minecraft": "https://github.com/srnyx/mc-server-templates",
             "template/mc": "https://github.com/srnyx/mc-server-templates",
-            // Miscellaneous
-            "disabled": "https://docs.google.com/document/d/e/2PACX-1vRDtSEco8rAS6gbMSgHo5Bk0QJzWs54sclZT-r8GLlgDWYghyU4yrhI6R9FpwNqWDWV25j955JCzKG_/pub",
+            // Payment
             "donate": "https://ko-fi.com/srnyx",
-            "review": "https://trustpilot.com/evaluate/srnyx.xyz",
-            "reviews": "https://trustpilot.com/review/srnyx.xyz",
-            "venox": "https://venox.network",
-            "ai": "https://beta.character.ai/c/XrqPCrB3GheLszW9W3ZGLx92Pyw2v9Zcn9wJhEjncr4",
-            "sywf": "https://chrome.google.com/webstore/detail/simple-youtube-windowed-fullscreen/pbihmiiillncegkbfnfkmlcjkpagehgh",
-            "pc": "https://pcpartpicker.com/user/srnyx/saved/F9X7wP",
-            "vimeo": "https://vimeo.com/srnyx",
             "ko-fi": "https://ko-fi.com/srnyx",
             "paypal": "https://venox.network/paypal",
             "stripe": "https://venox.network/stripe",
-            "sponsor": "https://github.com/sponsors/srnyx"
+            "sponsor": "https://github.com/sponsors/srnyx",
+            // Miscellaneous
+            "disabled": "https://docs.google.com/document/d/e/2PACX-1vRDtSEco8rAS6gbMSgHo5Bk0QJzWs54sclZT-r8GLlgDWYghyU4yrhI6R9FpwNqWDWV25j955JCzKG_/pub",
+            "review": "https://trustpilot.com/evaluate/srnyx.com",
+            "reviews": "https://trustpilot.com/review/srnyx.com",
+            "venox": "https://venox.network",
+            "ai": "https://beta.character.ai/c/XrqPCrB3GheLszW9W3ZGLx92Pyw2v9Zcn9wJhEjncr4",
+            "sywf": "https://chrome.google.com/webstore/detail/simple-youtube-windowed-fullscreen/pbihmiiillncegkbfnfkmlcjkpagehgh",
+            "pc": "https://pcpartpicker.com/user/srnyx/saved/F9X7wP"
         }
     },
     seg: {
@@ -143,7 +144,7 @@ const object = {
     chrome: {
         static: {
             "sywf": "https://chrome.google.com/webstore/detail/simple-youtube-windowed-f/pbihmiiillncegkbfnfkmlcjkpagehgh",
-            "recapblock": "https://chrome.google.com/webstore/detail/recapblock/"
+            "recapblock": "https://chrome.google.com/webstore/detail/recapblock/okoeahofhgnlfkhiilkfhhipiekjdmja"
         }
     },
     "annoying-api": {
