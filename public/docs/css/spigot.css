@@ -5,25 +5,23 @@
 
 .buttons b {
     display: inline-block;
-    width: 33px;
+    font-size: 20px;
+    text-align: right;
+    width: 40px;
+    margin-right: 5px;
 }
 
 .buttons {
-    width: 530px;
+    width: 600px;
     margin: 0 auto;
 }
 
 .versionButton {
-    width: 60px;
-    text-align: center;
-    margin: 5px 3px 8px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: #1b4958;
-    font-family: 'Montserrat', sans-serif;
-    color: gainsboro;
-    box-shadow: black 2px 2px 0;
-    cursor: pointer;
-    border: 0 solid black;
-    border-radius: 5px;
+    width: 70px;
+    height: 40px;
+    line-height: 38px;
+    margin: 5px 3px;
+}
+.versionButton:hover {
+    line-height: 35px;
 }
