@@ -105,6 +105,7 @@ const object = {
             "threads": "https://threads.net/realsrnyx",
             "reddit": "https://reddit.com/user/srnyx",
             "youtube": "https://youtube.com/channel/UCZvkqbMtvejbV6MtPij0c6Q",
+            "yt": "https://youtube.com/channel/UCZvkqbMtvejbV6MtPij0c6Q",
             "tiktok": "https://tiktok.com/@srnyx_",
             "medium": "https://medium.com/@srnyx",
             "tumblr": "https://tumblr.com/srnyx",
@@ -119,7 +120,7 @@ const object = {
             "templates/personal": "https://xenon.bot/templates/adcVcMg7tV7q",
             "templates/one": "https://xenon.bot/templates/ENe3dpAwNkMC",
             "templates/minecraft": "https://github.com/srnyx/mc-server-templates",
-            "template/mc": "https://github.com/srnyx/mc-server-templates",
+            "templates/mc": "https://github.com/srnyx/mc-server-templates",
             // Payment
             "donate": "https://ko-fi.com/srnyx",
             "ko-fi": "https://ko-fi.com/srnyx",
