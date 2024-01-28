@@ -134,7 +134,8 @@ const object = {
             "venox": "https://venox.network",
             "ai": "https://beta.character.ai/c/XrqPCrB3GheLszW9W3ZGLx92Pyw2v9Zcn9wJhEjncr4",
             "sywf": "https://chrome.google.com/webstore/detail/simple-youtube-windowed-fullscreen/pbihmiiillncegkbfnfkmlcjkpagehgh",
-            "pc": "https://pcpartpicker.com/user/srnyx/saved/F9X7wP"
+            "pc": "https://pcpartpicker.com/user/srnyx/saved/F9X7wP",
+            "eminemify": "https://thunderstore.io/c/lethal-company/p/srnyx/Eminemify"
         }
     },
     seg: {
