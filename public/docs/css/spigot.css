@@ -3,6 +3,10 @@
     margin-bottom: 15px;
 }
 
+.buttons {
+    width: 600px;
+    margin: 0 auto;
+}
 .buttons b {
     display: inline-block;
     font-size: 20px;
@@ -11,12 +15,8 @@
     margin-right: 5px;
 }
 
-.buttons {
-    width: 600px;
-    margin: 0 auto;
-}
-
 .versionButton {
+    display: inline-block;
     width: 70px;
     height: 40px;
     line-height: 38px;
