@@ -18,6 +18,10 @@ app.get("/projects", (req, res) => {
     handle(res, "/projects.html");
 });
 
+app.get("/gradient", (req, res) => {
+    handle(res, "/gradient.html");
+});
+
 app.get("/docs/spigot", (req, res) => {
     handle(res, "/docs/spigot.html");
 });

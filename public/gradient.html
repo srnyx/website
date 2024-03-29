@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects | srnyx's Website</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+    <meta content="Gradient Thing" property="og:title"/>
+    <meta content="Some gradient generator thing for TAB plugin
+    Made by srnyx ❤️" property="og:description"/>
+    <meta name="theme-color" content="#1B4249">
+    <meta property="og:type" content="website"/>
+    <link type="application/json+oembed" href="https://paste.srnyx.com/atesagarew.json"/>
+
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/gradient.css">
+
+    <script src="/js/common.js" defer></script>
+    <script src="/js/gradient.js" defer></script>
+    <script src="https://kit.fontawesome.com/033eae2f57.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<button id="showNav" class="toggleNav hidden material-symbols-outlined">arrow_right_alt</button>
+<nav></nav>
+
+<main>
+    <h2>Gradient Generator for <a href="https://modrinth.com/plugin/tab-was-taken">TAB</a> Animations</h2>
+
+    <div>
+        <textarea id="input" placeholder="Enter your colors here (separated by new lines)...">#00a800
+#0bad08
+#13b211
+#1ab717
+#20bc1d
+#25c122
+#2ac627
+#2fcb2c
+#33d030
+#38d535
+#3cda39
+#40e03e
+#44e542
+#48ea46
+#4cef4a
+#4ff44f
+#53fa53
+#57ff57</textarea>
+        <textarea id="output" placeholder="Output will appear here..." readonly></textarea>
+    </div>
+
+    <div class="buttons">
+        <button id="generate" class="commonButton">Generate</button>
+        <button id="copy" class="commonButton">Copy</button>
+    </div>
+</main>
+
+<div class="links"></div>
+</body>
+</html>
