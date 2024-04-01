@@ -3,10 +3,22 @@ const color2 = document.getElementById('color2');
 const text = document.getElementById('text');
 const prefix = document.getElementById('prefix');
 const output = document.getElementById('output');
-const generate = document.getElementById('generate');
-const copy = document.getElementById('copy');
+const generateButton = document.getElementById('generate');
+const copyButton = document.getElementById('copy');
 
-generate.addEventListener('click', () => {
+generateButton.addEventListener('click', generate);
+
+document.addEventListener('keydown', event => {
+	if (event.key === 'Enter') generate();
+});
+
+copyButton.addEventListener('click', () => {
+    output.select();
+    document.execCommand('copy');
+    alert('Copied to clipboard');
+});
+
+function generate() {
     const characters = text.value.trim().split('');
     const length = characters.length;
 	const evenMod = length % 2;
@@ -30,13 +42,7 @@ generate.addEventListener('click', () => {
 
 	// Output the gradient lines
 	output.innerHTML = lines.join('\n');
-});
-
-copy.addEventListener('click', () => {
-    output.select();
-    document.execCommand('copy');
-    alert('Copied to clipboard');
-});
+}
 
 /**
  * Adapted from https://github.com/anomal/RainbowVis-JS under Eclipse Public License v1.0
