@@ -62,7 +62,8 @@ const noRedirect = [
     "paste",
     "go-to",
     "img",
-    "media"]
+    "media"
+]
 
 // All the redirections, @ is root
 // Subsections: primary (string), static (object),

@@ -27,29 +27,19 @@
 <main>
     <h2>Gradient Generator for <a href="https://modrinth.com/plugin/tab-was-taken">TAB</a> Animations</h2>
 
-    <div>
-        <textarea id="input" placeholder="Enter your colors here (separated by new lines)...">#00a800
-#0bad08
-#13b211
-#1ab717
-#20bc1d
-#25c122
-#2ac627
-#2fcb2c
-#33d030
-#38d535
-#3cda39
-#40e03e
-#44e542
-#48ea46
-#4cef4a
-#4ff44f
-#53fa53
-#57ff57</textarea>
-        <textarea id="output" placeholder="Output will appear here..." readonly></textarea>
+    <div class="inputs">
+        <input type="color" id="color1" value="#00a800">
+        <input type="color" id="color2" value="#57ff57">
     </div>
 
-    <div class="buttons">
+    <div class="inputs">
+        <input id="text" placeholder="The text to put in the gradient..." value="Blanch Ranch SMP">
+        <input id="prefix" placeholder="Text to prefix before each character..." value="&l">
+    </div>
+
+    <textarea id="output" placeholder="Output will appear here..." readonly></textarea>
+
+    <div>
         <button id="generate" class="commonButton">Generate</button>
         <button id="copy" class="commonButton">Copy</button>
     </div>

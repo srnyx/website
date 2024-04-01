@@ -10,17 +10,20 @@ a {
   color: gainsboro;
 }
 
-textarea {
-  height: 75vh;
+.inputs {
+  margin: 1vh;
+}
+
+input {
+  height: 50px;
+  width: 49.7vh;
   font-size: 20px;
 }
 
-#input {
-  width: 15vh;
-}
-
-#output {
-  width: 80vh;
+textarea {
+  height: 65vh;
+  width: 100vh;
+  font-size: 20px;
 }
 
 .commonButton {
