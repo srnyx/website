@@ -112,6 +112,7 @@ const object = {
             "tumblr": "https://tumblr.com/srnyx",
             "steam": "https://steamcommunity.com/id/srnyx",
             "vimeo": "https://vimeo.com/srnyx",
+            "letterbox": "https://letterboxd.com/srnyx",
             // Templates
             "templates": "https://beacons.ai/srnyx/templates",
             "templates/simple": "https://xenon.bot/templates/r2uhQjNFKYHA",
