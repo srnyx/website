@@ -112,7 +112,6 @@ const object = {
             "tumblr": "https://tumblr.com/srnyx",
             "steam": "https://steamcommunity.com/id/srnyx",
             "vimeo": "https://vimeo.com/srnyx",
-            "letterbox": "https://letterboxd.com/srnyx",
             // Templates
             "templates": "https://beacons.ai/srnyx/templates",
             "templates/simple": "https://xenon.bot/templates/r2uhQjNFKYHA",
@@ -138,6 +137,9 @@ const object = {
             "sywf": "https://chrome.google.com/webstore/detail/simple-youtube-windowed-fullscreen/pbihmiiillncegkbfnfkmlcjkpagehgh",
             "pc": "https://pcpartpicker.com/user/srnyx/saved/F9X7wP",
             "eminemify": "https://thunderstore.io/c/lethal-company/p/srnyx/Eminemify"
+        },
+        dynamicReplace: {
+            "letterbox": "https://letterboxd.com/srnyx",
         }
     },
     seg: {
