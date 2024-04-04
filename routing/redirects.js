@@ -97,6 +97,7 @@ const object = {
             // Social
             "media": "https://beacons.ai/srnyx/mediakit",
             "github": "https://github.com/srnyx",
+            "codepen": "https://codepen.io/srnyx",
             "gitlab": "https://gitlab.com/srnyx",
             "roblox": "https://roblox.com/users/108251343",
             "twitter": "https://twitter.com/srnyx",
@@ -112,6 +113,12 @@ const object = {
             "tumblr": "https://tumblr.com/srnyx",
             "steam": "https://steamcommunity.com/id/srnyx",
             "vimeo": "https://vimeo.com/srnyx",
+            "deviantart": "https://deviantart.com/realsrnyx",
+            "dribbble": "https://dribbble.com/srnyx",
+            "behance": "https://behance.net/srnyx",
+            "creativemarket": "https://creativemarket.com/users/srnyx",
+            "imdb": "https://imdb.com/user/ur179760262",
+            "sketchfab": "https://sketchfab.com/srnyx",
             // Templates
             "templates": "https://beacons.ai/srnyx/templates",
             "templates/simple": "https://xenon.bot/templates/r2uhQjNFKYHA",
