@@ -94,7 +94,7 @@ const object = {
             "bio": "https://discords.com/bio/p/srnyx",
             "bots": "https://docs.google.com/document/d/e/2PACX-1vTNYYfb-Piv8T3jEbFbi3OXV6v0U8Oj974umNSI3c8seFzAZaPdtImKI4stf5vV1vro8B3hzyX9wLbI/pub",
             "lofi": "https://top.gg/bot/830530156048285716",
-            // Social
+            // Profiles
             "media": "https://beacons.ai/srnyx/mediakit",
             "github": "https://github.com/srnyx",
             "codepen": "https://codepen.io/srnyx",
@@ -119,6 +119,7 @@ const object = {
             "creativemarket": "https://creativemarket.com/users/srnyx",
             "imdb": "https://imdb.com/user/ur179760262",
             "sketchfab": "https://sketchfab.com/srnyx",
+			"typeracer": "https://data.typeracer.com/pit/profile?user=srnyx",
             // Templates
             "templates": "https://beacons.ai/srnyx/templates",
             "templates/simple": "https://xenon.bot/templates/r2uhQjNFKYHA",
