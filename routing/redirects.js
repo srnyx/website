@@ -148,6 +148,7 @@ const object = {
         },
         dynamicReplace: {
             "letterbox": "https://letterboxd.com/srnyx",
+            "letterboxd": "https://letterboxd.com/srnyx"
         }
     },
     seg: {
