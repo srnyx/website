@@ -72,12 +72,18 @@ const object = {
         static: {
             // Music
             "spotify": "https://open.spotify.com/user/4ahrhexooug5ds02cuxwk7xuc",
-            "playlist": "https://open.spotify.com/playlist/76YPSzrTgG2lujDtqHncxk",
-            "pl": "https://open.spotify.com/playlist/76YPSzrTgG2lujDtqHncxk",
             "pinterest": "https://pinterest.com/srnyx",
             "soundcloud": "https://soundcloud.com/srnyx",
             "deezer": "https://deezer.com/us/profile/4374228162",
             "bandcamp": "https://bandcamp.com/srnyx",
+            // Playlists
+            "pl": "https://open.spotify.com/playlist/76YPSzrTgG2lujDtqHncxk",
+            "playlist": "https://open.spotify.com/playlist/76YPSzrTgG2lujDtqHncxk",
+            "playlist/srnyx": "https://open.spotify.com/playlist/76YPSzrTgG2lujDtqHncxk",
+            "playlist/car": "https://open.spotify.com/playlist/0Dn3G0zswRPtvSQyPlFThl",
+            "playlist/karaoke": "https://open.spotify.com/playlist/2xOjrwwYiANSYJt0pdqzWA",
+            "playlist/billie": "https://open.spotify.com/playlist/7Midf7H11Cl1dP9Jx1iYTV",
+            "playlist/ajr": "https://open.spotify.com/playlist/0QdFdSMAjAB2585eEeou8C",
             // Minecraft
             "modrinth": "https://modrinth.com/user/srnyx",
             "hangar": "https://hangar.papermc.io/srnyx",
