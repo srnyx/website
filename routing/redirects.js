@@ -139,6 +139,7 @@ const object = {
             // Payment
             "donate": "https://ko-fi.com/srnyx",
             "ko-fi": "https://ko-fi.com/srnyx",
+            "commissions", "https://ko-fi.com/srnyx/commissions",
             "paypal": "https://venox.network/paypal",
             "stripe": "https://venox.network/stripe",
             "sponsor": "https://github.com/sponsors/srnyx",
