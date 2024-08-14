@@ -141,9 +141,9 @@ const object = {
             "ko-fi": "https://ko-fi.com/srnyx",
             "commissions": "https://ko-fi.com/srnyx/commissions",
             "paypal": "https://venox.network/paypal",
-            "stripe": "https://venox.network/stripe",
             "sponsor": "https://github.com/sponsors/srnyx",
             // Miscellaneous
+            "lilypad": "https://billing.lilypad.gg/aff.php?aff=31",
             "disabled": "https://docs.google.com/document/d/e/2PACX-1vRDtSEco8rAS6gbMSgHo5Bk0QJzWs54sclZT-r8GLlgDWYghyU4yrhI6R9FpwNqWDWV25j955JCzKG_/pub",
             "review": "https://trustpilot.com/evaluate/srnyx.com",
             "reviews": "https://trustpilot.com/review/srnyx.com",
