@@ -11,14 +11,22 @@ app.get("*", (req, res, next) => {
     if (noRedirect.includes(subDomain)) return;
 
     // Get redirect
-    const split = req.originalUrl.split("?");
+    const original = req.originalUrl;
+    const split = original.split("?");
     const searchParams = split[1];
     const searchParamsString = searchParams ? "?" + searchParams : "";
-    const redirect = getRedirect(subDomain, split[0].slice(1));
+    let redirect = getRedirect(subDomain, split[0].slice(1));
 
-    // Redirect/next
-    if (redirect) return res.redirect(redirect + searchParamsString);
-    next();
+    // No redirect, next
+    if (!redirect) {
+        next();
+        return;
+    }
+
+    // Redirect
+    redirect += searchParamsString;
+    console.log(`[${req.headers['x-forwarded-for'] || req.socket.remoteAddress}] ${protocol}://${req.headers.host}${original} --> ${redirect}`);
+    return res.redirect(redirect + searchParamsString);
 });
 
 function getRedirect(subDomain, path) {
