@@ -197,5 +197,12 @@ const object = {
         static: {
             "gradle": "https://plugins.gradle.org/plugin/xyz.srnyx.gradle-galaxy"
         }
+    },
+    "a-user-app": {
+        github: true,
+        static: {
+            "install": "https://discord.com/oauth2/authorize?client_id=1298765381296717845",
+            "invite": "https://discord.com/oauth2/authorize?client_id=1298765381296717845"
+        }
     }
 }
