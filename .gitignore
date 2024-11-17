@@ -1,4 +1,4 @@
 /.idea
-/.ugly
 /node_modules
+/.old.zip
 /host.js
