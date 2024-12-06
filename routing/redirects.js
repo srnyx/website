@@ -171,6 +171,11 @@ const object = {
             "": "https://sites.google.com/view/srnyxevents",
         }
     },
+    temp: {
+        dynamic: {
+            "": "https://srnyx.com/templates",
+        }
+    },
     chrome: {
         static: {
             "sywf": "https://chrome.google.com/webstore/detail/simple-youtube-windowed-f/pbihmiiillncegkbfnfkmlcjkpagehgh",
