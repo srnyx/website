@@ -23,10 +23,17 @@ app.get("*", (req, res, next) => {
         return;
     }
 
-    // Redirect
+    // Add search params
     redirect += searchParamsString;
-    console.log(`[${req.headers['x-forwarded-for'] || req.socket.remoteAddress}] ${protocol}://${req.headers.host}${original} --> ${redirect}`);
-    return res.redirect(redirect + searchParamsString);
+
+    // Log to console
+    const timestamp = new Date().toLocaleString().replace(',', '');
+    const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+    const originalUrl = `${protocol}://${req.headers.host}${original}`;
+    console.log(`[${timestamp}] [${ip}] ${originalUrl} --> ${redirect}`);
+
+    // Redirect
+    return res.redirect(redirect);
 });
 
 function getRedirect(subDomain, path) {
