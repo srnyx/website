@@ -167,10 +167,6 @@ const object = {
             "sywf": "https://chrome.google.com/webstore/detail/simple-youtube-windowed-fullscreen/pbihmiiillncegkbfnfkmlcjkpagehgh",
             "pc": "https://pcpartpicker.com/user/srnyx/saved/F9X7wP",
             "eminemify": "https://thunderstore.io/c/lethal-company/p/srnyx/Eminemify"
-        },
-        dynamicReplace: {
-            "letterbox": "https://letterboxd.com/srnyx",
-            "letterboxd": "https://letterboxd.com/srnyx"
         }
     },
     seg: {
