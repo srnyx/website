@@ -27,7 +27,7 @@ app.get("*", (req, res, next) => {
     redirect += searchParamsString;
 
     // Log to console
-    const timestamp = new Date().toLocaleString().replace(',', '');
+    const timestamp = new Date().toLocaleString("en-US", {timeZone: "US/Eastern"}).replace(',', '');
     const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
     const originalUrl = `${protocol}://${req.headers.host}${original}`;
     console.log(`[${timestamp}] [${ip}] ${originalUrl} --> ${redirect}`);
