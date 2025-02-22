@@ -7,8 +7,9 @@ app.get("*", (req, res, next) => {
 
     // Get/check subDomains
     const reqSubDomains = req.subdomains;
-    const subDomain = reqSubDomains.length === 0 ? "@" : reqSubDomains[0];
+    let subDomain = reqSubDomains.length === 0 ? "@" : reqSubDomains[0];
     if (noRedirect.includes(subDomain)) return;
+    if (subDomain === "www") subDomain = "@";
 
     // Get redirect
     const original = req.originalUrl;
