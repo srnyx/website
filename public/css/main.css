@@ -19,3 +19,6 @@ main a {
   font-size: 30px;
   line-height: 50px;
 }
+main a:hover {
+  text-decoration: underline;
+}
