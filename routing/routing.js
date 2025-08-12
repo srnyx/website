@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const {getHost} = require("../host");
+const config = require("../config.json");
 
 const app = express();
 module.exports.app = app;
@@ -12,9 +12,12 @@ require('./pages.js');
 require('./redirects.js');
 require('./main.js');
 
-const port = process.env.PORT || 30015;
+// Get port and host
+const port = process.env.PORT || config.port;
+const host = config.host.replace("{PORT}", port);
+
+// Start server
 app.listen(port, () => {
-    const host = getHost(port);
     console.log(`Server running on http://${host}`)
     app.set('subdomain offset', host.split(".").length);
 });

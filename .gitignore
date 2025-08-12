@@ -1,4 +1,4 @@
 /.idea
 /node_modules
 /.old.zip
-/host.js
+/config.json
