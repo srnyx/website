@@ -1,0 +1,250 @@
+{
+  "minecraft-versions": {
+    "retrieve-from-mojang": true,
+    "versions": [
+      "1.21.6","1.21.4","1.21.3","1.21.2","1.21.1","1.21",
+      "1.20.6","1.20.5","1.20.4","1.20.3","1.20.2","1.20.1","1.20",
+      "1.19.4","1.19.3","1.19.2","1.19.1","1.19",
+      "1.18.2","1.18.1","1.18",
+      "1.17.1","1.17",
+      "1.16.5","1.16.4","1.16.3","1.16.2","1.16.1","1.16",
+      "1.15.2","1.15.1","1.15",
+      "1.14.4","1.14.3","1.14.2","1.14.1","1.14",
+      "1.13.2","1.13.1","1.13",
+      "1.12.2","1.12.1","1.12",
+      "1.11.2","1.11.1","1.11",
+      "1.10.2","1.10.1","1.10",
+      "1.9.4","1.9.3","1.9.2","1.9.1","1.9",
+      "1.8.9","1.8.8","1.8.7","1.8.6","1.8.5","1.8.4","1.8.3","1.8.2","1.8.1","1.8",
+      "1.7.10","1.7.9","1.7.8","1.7.7","1.7.6","1.7.5","1.7.4","1.7.3","1.7.2",
+      "1.6.4","1.6.2","1.6.1",
+      "1.5.2","1.5.1",
+      "1.4.7","1.4.6","1.4.5","1.4.4","1.4.2",
+      "1.3.2","1.3.1",
+      "1.2.5","1.2.4","1.2.3","1.2.2","1.2.1",
+      "1.1","1.0"
+    ]
+  },
+
+  "defaults": {
+    "author": "srnyx",
+    "exact": {
+      "loaders": ["purpur", "paper", "spigot"],
+      "minecraft-versions": ["1.8.8+"]
+    }
+  },
+
+  "projects": {
+    "annoying-api": {
+      "platforms": {
+        "modrinth": "gzktm9GG",
+        "hangar": "AnnoyingAPI",
+        "spigot": 106637,
+        "bukkit": 728930
+      }
+    },
+    "limited-lives": {
+      "platforms": {
+        "modrinth": "LvTKDASD",
+        "hangar": "LimitedLives",
+        "spigot": 109078,
+        "bukkit": 846826
+      }
+    },
+    "stop-being-an-idiot": {
+      "platforms": {
+        "modrinth": "CyRCy5Yw",
+        "hangar": "StopBeingAnIdiot",
+        "spigot": 107313,
+        "bukkit": 805752
+      }
+    },
+    "personal-phantoms": {
+      "platforms": {
+        "modrinth": "lzjYdd5h",
+        "hangar": "PersonalPhantoms",
+        "spigot": 106381,
+        "bukkit": 719645
+      },
+      "minecraft-versions": [
+        "1.13+"
+      ]
+    },
+    "limitless-lag": {
+      "platforms": {
+        "modrinth": "TwwhAG4s",
+        "hangar": "LimitlessLag",
+        "spigot": 109420,
+        "bukkit": 896851
+      }
+    },
+    "vehicles-crafting": {
+      "platforms": {
+        "modrinth": "yyvpZ0NC",
+        "hangar": "VehiclesCrafting",
+        "spigot": 117788,
+        "bukkit": 1056898
+      }
+    },
+    "forcefield": {
+      "platforms": {
+        "modrinth": "YmVbdUou",
+        "hangar": "ForceField",
+        "spigot": 107048,
+        "bukkit": 783093
+      }
+    },
+    "simple-chat-formatter": {
+      "platforms": {
+        "modrinth": "h3dHO3Sr",
+        "hangar": "SimpleChatFormatter",
+        "spigot": 111804,
+        "bukkit": 867282
+      }
+    },
+    "not-your-horse": {
+      "platforms": {
+        "modrinth": "GVSyHi8e",
+        "hangar": "NotYourHorse",
+        "spigot": 107339,
+        "bukkit": 807393
+      }
+    },
+    "air-cannon": {
+      "platforms": {
+        "modrinth": "CF0dn4pJ",
+        "hangar": "AirCannon",
+        "spigot": 112698,
+        "bukkit": 911695
+      }
+    },
+    "lifeswap": {
+      "platforms": {
+        "modrinth": "KX9guorr",
+        "hangar": "LifeSwap",
+        "spigot": 105208,
+        "bukkit": 896916
+      }
+    },
+    "pl3xmap-supervanish": {
+      "platforms": {
+        "modrinth": "46A5q0pA",
+        "hangar": "Pl3xMap-SuperVanish",
+        "spigot": 117638,
+        "bukkit": 1051275,
+        "github": "Pl3xMap-SuperVanish"
+      }
+    },
+    "erratic-explosions": {
+      "platforms": {
+        "modrinth": "6LSX31U3",
+        "hangar": "ErraticExplosions",
+        "spigot": 107234,
+        "bukkit": 794346
+      }
+    },
+    "many-mobs": {
+      "platforms": {
+        "modrinth": "p7CONpnK",
+        "hangar": "ManyMobs",
+        "spigot": 109423,
+        "bukkit": 897250
+      }
+    },
+    "midas-touch": {
+      "platforms": {
+        "modrinth": "XyFf5IBt",
+        "hangar": "MidasTouch",
+        "spigot": 109422,
+        "bukkit": 897236
+      }
+    },
+    "exploding-blocks": {
+      "platforms": {
+        "modrinth": "kKXUJTU9",
+        "hangar": "ExplodingBlocks",
+        "spigot": 104482,
+        "bukkit": 896921
+      }
+    },
+    "critical-colors": {
+      "platforms": {
+        "modrinth": "ZXSFfy1U",
+        "hangar": "CriticalColors",
+        "spigot": 107312,
+        "bukkit": 805743
+      }
+    },
+    "majestic-materials": {
+      "platforms": {
+        "modrinth": "ktWcgfof",
+        "hangar": "MajesticMaterials",
+        "spigot": 114887,
+        "bukkit": 970023
+      }
+    },
+    "laser-tag": {
+      "platforms": {
+        "modrinth": "0Jg6QW3m",
+        "hangar": "LaserTag",
+        "spigot": 106408,
+        "bukkit": 719662
+      }
+    },
+    "impulsive-inventories": {
+      "platforms": {
+        "modrinth": "y1g9LETP",
+        "hangar": "ImpulsiveInventories",
+        "spigot": 113437,
+        "bukkit": 933924
+      }
+    },
+    "afkplusdiscord": {
+      "platforms": {
+        "modrinth": "f49kyNQQ",
+        "hangar": "AFKPlusDiscord",
+        "spigot": 114950,
+        "bukkit": 971251,
+        "github": "AFKPlusDiscord"
+      }
+    },
+    "command-logger": {
+      "platforms": {
+        "modrinth": "PMWx2eoO",
+        "hangar": "CommandLogger",
+        "spigot": 126150,
+        "bukkit": 1289091
+      }
+    },
+    "endgame-beds": {
+      "platforms": {
+        "modrinth": "sOC7pzmH",
+        "hangar": "EndgameBeds"
+      }
+    },
+    "bromine": {
+      "platforms": {
+        "modrinth": "SMLaeLe2",
+        "hangar": {
+          "author": "Venox",
+          "name": "BromineEssentials"
+        },
+        "spigot": 102058,
+        "bukkit": 895687,
+        "github": {
+          "author": "Venox-Network"
+        }
+      }
+    },
+    "event-alerts-integration": {
+      "platforms": {
+        "modrinth": "DmjI2XpF",
+        "github": false
+      },
+      "loaders": [
+        "purpur",
+        "paper"
+      ]
+    }
+  }
+}

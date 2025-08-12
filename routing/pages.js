@@ -1,21 +1,25 @@
 const fs = require("fs");
 const path = require("path");
 const {app} = require("./routing.js");
-const {handle} = require("./utilities");
+const {handle, projects} = require("./utilities");
 const cors = require('cors');
 
 // recapblock
 app.use('/recapblock', cors({ origin: ['https://youtube.com', 'https://www.youtube.com'] }));
 app.get("/recapblock/data", (req, res) => {
-    res.send('{"channels":["filmzrecaps","filmsrecapped","quirkorecap","movierecapsofficial","filmrecapshere","mysteryrecappedofficial","horrormovierecap6548","deviousrecapofficial","confusingmovies","quickfilms4650","storyrecapped","minutemovies1","jakerecaps","popcornrecap","goodemovies","movierecaps_","foxrecaps","filmstoryrecapped","movieclub0505","clock7x","filmcrop","seriesrecapped"]}');
+    res.contentType("application/json").send('{"channels":["filmzrecaps","filmsrecapped","quirkorecap","movierecapsofficial","filmrecapshere","mysteryrecappedofficial","horrormovierecap6548","deviousrecapofficial","confusingmovies","quickfilms4650","storyrecapped","minutemovies1","jakerecaps","popcornrecap","goodemovies","movierecaps_","foxrecaps","filmstoryrecapped","movieclub0505","clock7x","filmcrop","seriesrecapped"]}');
+});
+
+// projects
+app.get("/projects", (req, res) => {
+    handle(res, "/projects.html");
+});
+app.get("/projects/data", (req, res) => {
+    res.contentType("application/json").send(projects);
 });
 
 app.get("/petImages", (req, res) => {
     res.send(petsJson);
-});
-
-app.get("/projects", (req, res) => {
-    handle(res, "/projects.html");
 });
 
 app.get("/gradient", (req, res) => {

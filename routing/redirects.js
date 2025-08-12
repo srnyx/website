@@ -38,7 +38,7 @@ app.get("*", (req, res, next) => {
 });
 
 function getRedirect(subDomain, path) {
-    const subObject = object[subDomain];
+    const subObject = redirects[subDomain];
 
     // GitHub
     if (!subObject) return github(subDomain, path);
@@ -83,7 +83,7 @@ const noRedirect = [
 
 // All the redirections, @ is root
 // Subsections: primary (string), static (object),
-const object = {
+const redirects = {
     "@": {
         static: {
             // Music
