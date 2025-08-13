@@ -97,6 +97,12 @@ function processMinecraftVersions(versions) {
         for (let i = 0; i < originalMinecraftVersions.length; i++) {
             const version = originalMinecraftVersions[i];
 
+            // Exact version
+            if (versions.includes(version)) {
+                minecraftVersions.push(version);
+                continue;
+            }
+
             // Higher than or equal to (+)
             if (version.endsWith('+')) {
                 const baseVersion = version.substring(0, version.length - 1);

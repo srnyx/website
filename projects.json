@@ -84,7 +84,10 @@
         "hangar": "VehiclesCrafting",
         "spigot": 117788,
         "bukkit": 1056898
-      }
+      },
+      "minecraft-versions": [
+        "1.15+"
+      ]
     },
     "forcefield": {
       "platforms": {
@@ -133,7 +136,15 @@
         "spigot": 117638,
         "bukkit": 1051275,
         "github": "Pl3xMap-SuperVanish"
-      }
+      },
+      "minecraft-versions": [
+        "1.19.4",
+        "1.20-1.20.2",
+        "1.20.4",
+        "1.20.6",
+        "1.21-1.21.1",
+        "1.21.3+"
+      ]
     },
     "erratic-explosions": {
       "platforms": {
@@ -165,7 +176,10 @@
         "hangar": "ExplodingBlocks",
         "spigot": 104482,
         "bukkit": 896921
-      }
+      },
+      "minecraft-versions": [
+        "1.14.2+"
+      ]
     },
     "critical-colors": {
       "platforms": {
@@ -189,7 +203,10 @@
         "hangar": "LaserTag",
         "spigot": 106408,
         "bukkit": 719662
-      }
+      },
+      "minecraft-versions": [
+        "1.19+"
+      ]
     },
     "impulsive-inventories": {
       "platforms": {
@@ -206,7 +223,10 @@
         "spigot": 114950,
         "bukkit": 971251,
         "github": "AFKPlusDiscord"
-      }
+      },
+      "minecraft-versions": [
+        "1.19.3+"
+      ]
     },
     "command-logger": {
       "platforms": {
@@ -244,6 +264,9 @@
       "loaders": [
         "purpur",
         "paper"
+      ],
+      "minecraft-versions": [
+        "1.18.2+"
       ]
     }
   }

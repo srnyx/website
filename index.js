@@ -1,1 +1,1 @@
-const routing = require('./routing/routing.js');
+require('./routing/routing.js');
