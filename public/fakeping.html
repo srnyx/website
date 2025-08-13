@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake Ping Generator | srnyx's Website</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+    <meta content="Fake Ping Generator" property="og:title"/>
+    <meta content="Generate a fake ping for your Discord server icon
+    Made by srnyx ❤️" property="og:description"/>
+    <meta name="theme-color" content="#1B4249">
+    <meta property="og:type" content="website"/>
+    <link type="application/json+oembed" href="https://paste.srnyx.com/atesagarew.json"/>
+
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/fakeping.css">
+
+    <script src="/js/common.js" defer></script>
+    <script type="module" src="/js/fakeping.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gif.js.optimized/dist/gif.min.js"></script>
+    <script src="https://kit.fontawesome.com/033eae2f57.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<button id="showNav" class="toggleNav hidden material-symbols-outlined">arrow_right_alt</button>
+<nav></nav>
+
+<main>
+    <h2>Fake Ping Generator for Discord Server Icons</h2>
+
+    <input type="file" id="input" accept="image/*">
+
+    <div id="downloadContainer" hidden="hidden">
+        <a id="downloadLink" class="commonButton">Download Image</a>
+    </div>
+
+    <img id="output">
+</main>
+
+<div class="links"></div>
+</body>
+</html>

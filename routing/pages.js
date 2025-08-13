@@ -22,6 +22,10 @@ app.get("/petImages", (req, res) => {
     res.send(petsJson);
 });
 
+app.get("/fakeping", (req, res) => {
+    handle(res, "/fakeping.html");
+});
+
 app.get("/gradient", (req, res) => {
     handle(res, "/gradient.html");
 });
