@@ -49,7 +49,13 @@
         "hangar": "LimitedLives",
         "spigot": 109078,
         "bukkit": 846826
-      }
+      },
+      "loaders": [
+        "purpur",
+        "paper",
+        "spigot",
+        "folia"
+      ]
     },
     "stop-being-an-idiot": {
       "platforms": {
@@ -66,6 +72,12 @@
         "spigot": 106381,
         "bukkit": 719645
       },
+      "loaders": [
+        "purpur",
+        "paper",
+        "spigot",
+        "folia"
+      ],
       "minecraft-versions": [
         "1.13+"
       ]
