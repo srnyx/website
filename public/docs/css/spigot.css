@@ -4,8 +4,9 @@
 }
 
 .buttons {
-    width: 600px;
+    display: table;
     margin: 0 auto;
+    text-align: left;
 }
 .buttons b {
     display: inline-block;
