@@ -124,6 +124,8 @@ const redirects = {
             "roblox": "https://roblox.com/users/108251343",
             "twitter": "https://twitter.com/srnyx",
             "x": "https://twitter.com/srnyx",
+            "bluesky": "https://bsky.app/profile/srnyx.com",
+            "mastodon": "https://floss.social/@srnyx",
             "twitch": "https://twitch.tv/srnyx",
             "instagram": "https://instagram.com/realsrnyx",
             "threads": "https://threads.net/realsrnyx",
