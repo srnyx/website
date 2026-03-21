@@ -75,6 +75,7 @@ function github(subDomain, path) {
 
 // Subdomains that shouldn't redirect anywhere
 const noRedirect = [
+    "repo",
     "paste",
     "go-to",
     "img",
