@@ -199,7 +199,8 @@ const redirects = {
             "spigot": "https://spigotmc.org/resources/106637",
             "bukkit": "https://dev.bukkit.org/projects/annoying-api",
             "snapshot": "https://github.com/srnyx/annoying-api/actions/workflows/build.yml",
-            "javadocs": "https://jitpack.io/com/github/srnyx/annoying-api/latest/javadoc/",
+            "javadocs": "https://repo.srnyx.com/javadoc/releases/xyz/srnyx/annoying-api/latest",
+			"repo": "https://repo.srnyx.com/#/releases/xyz/srnyx/annoying-api",
             "jitpack": "https://jitpack.io/#xyz.srnyx/annoying-api",
             "plugins": "https://github.com/srnyx/annoying-api/discussions/categories/annoying-api-plugins"
         }

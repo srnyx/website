@@ -41,7 +41,13 @@
         "hangar": "AnnoyingAPI",
         "spigot": 106637,
         "bukkit": 728930
-      }
+      },
+      "loaders": [
+        "purpur",
+        "paper",
+        "spigot",
+        "folia"
+      ]
     },
     "limited-lives": {
       "platforms": {
