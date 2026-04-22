@@ -4,6 +4,12 @@ const {app} = require("./routing.js");
 const {handle, projects} = require("./utilities");
 const cors = require('cors');
 
+
+// resume
+app.get("/resume", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "public", "assets", "resume.pdf"));
+});
+
 // recapblock
 app.use('/recapblock', cors({ origin: ['https://youtube.com', 'https://www.youtube.com'] }));
 app.get("/recapblock/data", (req, res) => {
