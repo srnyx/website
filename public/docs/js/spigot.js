@@ -1,6 +1,6 @@
 const path = window.location.href.split('/docs/spigot/')[1];
 const availableVersions = {
-    '1.21': ['1.21.8', '1.21.7', '1.21.6', '1.21.5', '1.21.4', '1.21.3', '1.21.2', '1.21.1', '1.21'],
+    '1.21': ['1.21.10', '1.21.8', '1.21.7', '1.21.6', '1.21.5', '1.21.4', '1.21.3', '1.21.2', '1.21.1', '1.21'],
     '1.20': ['1.20.6', '1.20.5', '1.20.4', '1.20.3', '1.20.2', '1.20.1', '1.20'],
     '1.19': ['1.19.4', '1.19.3', '1.19.2', '1.19.1', '1.19'],
     '1.18': ['1.18.2', '1.18.1', '1.18'],
@@ -20,6 +20,7 @@ const availableVersions = {
 };
 const dashes = ['1.15.2', '1.15.1', '1.15', '1.14.4', '1.14.3', '1.14.2', '1.14.1', '1.14', '1.13.2', '1.13.1', '1.13', '1.12.2', '1.12.1', '1.12']
 const percentTwenty = ['1.11.2', '1.11.1', '1.11', '1.10.2', '1.10', '1.9.4', '1.9.2', '1.9.1', '1.9', '1.8.8', '1.8.7', '1.8.6', '1.8.5', '1.8.4', '1.8.3', '1.8', '1.7.10', '1.7.9', '1.7.8', '1.7.5', '1.7.2', '1.6.2', '1.5']
+const noInit = dashes + percentTwenty
 
 // Add buttons
 const buttonsElement = document.getElementsByClassName('buttons')[0];
@@ -64,11 +65,28 @@ if (path) {
 
 function getPath(version) {
     if (!path) return;
-    if (dashes.includes(version)) return path.replace(/[,()]/g, '-');
-    if (percentTwenty.includes(version)) return path.replace(',', ',%20');
-    if (version === 'LATEST' && !path.endsWith('.html')) {
-        if (!path.includes('#')) return path + '.html';
-        if (!path.includes('.html#')) return path.replace('#', '.html#');
+
+    // LATEST
+    if (version === 'LATEST') {
+        if (!path.includes('.html')) {
+            if (!path.includes('#')) return path + '.html';
+            return path.replace('#', '.html#');
+        }
+        return path;
     }
-    return path;
+
+    let newPath = path;
+
+    // dashes, percentTwenty
+    if (dashes.includes(version)) newPath = newPath.replace(/[,()]/g, '-');
+    if (percentTwenty.includes(version)) newPath = newPath.replace(',', ',%20');
+
+    // noInit
+    if (noInit.includes(version)) {
+        const className = newPath.split('/').pop().split('.html')[0];
+        newPath = newPath.replace("%3Cinit%3E", className);
+        console.log(newPath, className)
+    }
+
+    return newPath;
 }
