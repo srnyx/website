@@ -19,8 +19,8 @@ const availableVersions = {
     '1.5': ['1.5'],
 };
 const dashes = ['1.15.2', '1.15.1', '1.15', '1.14.4', '1.14.3', '1.14.2', '1.14.1', '1.14', '1.13.2', '1.13.1', '1.13', '1.12.2', '1.12.1', '1.12']
-const percentTwentyAndParentheses = ['1.11.2', '1.11.1', '1.11', '1.10.2', '1.10', '1.9.4', '1.9.2', '1.9.1', '1.9', '1.8.8', '1.8.7', '1.8.6', '1.8.5', '1.8.4', '1.8.3', '1.8', '1.7.10', '1.7.9', '1.7.8', '1.7.5', '1.7.2', '1.6.2', '1.5']
-const noInit = dashes + percentTwentyAndParentheses
+const percentTwenty = ['1.11.2', '1.11.1', '1.11', '1.10.2', '1.10', '1.9.4', '1.9.2', '1.9.1', '1.9', '1.8.8', '1.8.7', '1.8.6', '1.8.5', '1.8.4', '1.8.3', '1.8', '1.7.10', '1.7.9', '1.7.8', '1.7.5', '1.7.2', '1.6.2', '1.5']
+const noInit = dashes + percentTwenty
 
 // Add buttons
 const buttonsElement = document.getElementsByClassName('buttons')[0];
@@ -78,12 +78,12 @@ function getPath(version) {
     let newPath = path;
 
     // dashes, percentTwenty
-    if (dashes.includes(version)) newPath = newPath.replace(/[,()]/g, '-');
-    if (percentTwentyAndParentheses.includes(version)) {
-        newPath = newPath
-          .replace(',', ',%20')
-          .replace('--', '()')
+    if (dashes.includes(version)) {
+        newPath = newPath.replace(/[,()]/g, '-');
+    } else {
+        newPath = newPath.replace('--', '()')
     }
+    if (percentTwenty.includes(version)) newPath = newPath.replace(',', ',%20')
 
     // noInit
     if (noInit.includes(version)) {
