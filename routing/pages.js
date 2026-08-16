@@ -40,7 +40,14 @@ app.get("/projects/data", (req, res) => {
     return res.status(200).json(response);
 });
 app.get("/projects/data/:id", (req, res) => {
-    res.json(projects.state.projects[req.params.id]);
+    const id = req.params.id;
+    const project = projects.state.projects[id];
+    if (!project) return res.status(404).json({ error: "Project not found" });
+
+    const response = {};
+    response[id] = project;
+
+    res.json(response);
 });
 app.post(
   "/projects/data/:id",
