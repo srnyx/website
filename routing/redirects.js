@@ -1,6 +1,6 @@
 const {app} = require("./routing.js");
 
-app.get("*", (req, res, next) => {
+app.get("/*splat", (req, res, next) => {
     // Check protocol
     const protocol = req.protocol;
     if (protocol !== "http" && protocol !== "https") return res.status(400).send("400: Protocol must be http or https");

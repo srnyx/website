@@ -5,6 +5,6 @@ app.get("/", (req, res) => {
     handle(res, "/main.html");
 });
 
-app.get("/*", (req, res) => {
+app.get("/*path", (req, res) => {
     res.redirect("/");
 });

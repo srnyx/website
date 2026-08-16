@@ -6,6 +6,7 @@ const app = express();
 module.exports.app = app;
 
 app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.json());
 
 // All routes
 require('./pages.js');
