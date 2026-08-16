@@ -96,6 +96,7 @@ function normalizeMongoProject(mongoProject) {
   // API tiers
   const apiTiers = project["api-tiers"];
   if (apiTiers) for (const tier of apiTiers) {
+    loaders.push(tier);
     const expanded = tierExpansions[tier];
     if (expanded) loaders.push(...expanded);
   }
