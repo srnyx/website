@@ -8,6 +8,7 @@ srnyx's official website of very cool random things
 
 - `port`: The port on which the website will run
 - `host`: The host on which the website will run. `{PORT}` will be replaced with the value of `port`.
+- `google-tag`: The Google Analytics tag.
 - `mongo`: The MongoDB connection string. This is used to store project data.
 - `projects`:
   - `token`: The token used to authenticate with the API. This is used to create/update projects.
@@ -19,6 +20,8 @@ srnyx's official website of very cool random things
 {
   "port": 30015,
   "host": "localhost:{PORT}",
+
+  "google-tag": "G-XXXXXXXXXX",
 
   "mongo": "mongodb://username:password@ip:port/database",
 

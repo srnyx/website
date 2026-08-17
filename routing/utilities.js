@@ -1,5 +1,9 @@
 const fs = require("fs");
 const path = require("path");
+const config = require("../config.json");
+
+const googleTagId = config["google-tag"];
+const googleTagScript = `<script async src="https://www.googletagmanager.com/gtag/js?id=${googleTagId}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${googleTagId}');</script>`;
 
 /**
  * Display a file's contents
@@ -15,6 +19,7 @@ module.exports.handle = (res, file, callable, error) => {
             if (error) return error(err);
             return console.error(err);
         }
+        data = data.toString().replace("<head>", `<head>${googleTagScript}`);
         if (callable) data = callable(data);
         res.contentType("text/html").send(data);
     })
