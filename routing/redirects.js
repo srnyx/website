@@ -1,4 +1,5 @@
 const {app} = require("./routing.js");
+const {trackRedirect} = require("./utilities.js");
 
 app.get("/*splat", (req, res, next) => {
     // Check protocol
@@ -32,6 +33,9 @@ app.get("/*splat", (req, res, next) => {
     const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
     const originalUrl = `${protocol}://${req.headers.host}${original}`;
     console.log(`[${timestamp}] [${ip}] ${originalUrl} --> ${redirect}`);
+
+    // Track in Google Analytics
+    trackRedirect(req, redirect);
 
     // Redirect
     return res.redirect(redirect);

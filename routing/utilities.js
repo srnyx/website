@@ -1,8 +1,11 @@
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 const config = require("../config.json");
 
-const googleTagId = config["google-tag"];
+const googleTag = config["google-tag"];
+const googleTagId = googleTag?.id;
+const googleTagSecret = googleTag?.secret;
 const googleTagScript = `<script async src="https://www.googletagmanager.com/gtag/js?id=${googleTagId}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${googleTagId}');</script>`;
 
 /**
@@ -23,6 +26,31 @@ module.exports.handle = (res, file, callable, error) => {
         if (callable) data = callable(data);
         res.contentType("text/html").send(data);
     })
+}
+
+/**
+ * Report a redirect to Google Analytics via the Measurement Protocol (redirects never load gtag.js, so this is server-side)
+ *
+ * @param   req             request
+ * @param   destination     the URL the request was redirected to
+ */
+module.exports.trackRedirect = (req, destination) => {
+    if (!googleTagId || !googleTagSecret) return;
+
+    const url = `https://www.google-analytics.com/debug/mp/collect?measurement_id=${googleTagId}&api_secret=${googleTagSecret}`;
+    const body = JSON.stringify({
+        client_id: crypto.randomUUID(),
+        events: [{
+            name: "redirect",
+            params: {
+                source_path: req.originalUrl,
+                destination: destination,
+                page_location: `${req.protocol}://${req.headers.host}${req.originalUrl}`
+            }
+        }]
+    });
+
+    fetch(url, {method: "POST", body}).catch(err => console.error("Failed to track redirect:", err));
 }
 
 /**

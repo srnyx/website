@@ -8,7 +8,9 @@ srnyx's official website of very cool random things
 
 - `port`: The port on which the website will run
 - `host`: The host on which the website will run. `{PORT}` will be replaced with the value of `port`.
-- `google-tag`: The Google Analytics tag.
+- `google-tag`:
+  - `id`: The Google Analytics tag.
+  - `secret`: The Google Analytics Measurement Protocol API secret (Admin → Data Streams → your stream → Measurement Protocol API secrets). Used to report redirects to GA server-side, since redirects never load `gtag.js`. Leave empty to disable redirect tracking.
 - `mongo`: The MongoDB connection string. This is used to store project data.
 - `projects`:
   - `token`: The token used to authenticate with the API. This is used to create/update projects.
@@ -21,7 +23,10 @@ srnyx's official website of very cool random things
   "port": 30015,
   "host": "localhost:{PORT}",
 
-  "google-tag": "G-XXXXXXXXXX",
+  "google-tag": {
+    "id": "G-XXXXXXXXXX",
+    "secret": "XXXXXXXXXXXXXXXXXXXXXX"
+  },
 
   "mongo": "mongodb://username:password@ip:port/database",
 
