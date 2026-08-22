@@ -37,7 +37,7 @@ module.exports.handle = (res, file, callable, error) => {
 module.exports.trackRedirect = (req, destination) => {
     if (!googleTagId || !googleTagSecret) return;
 
-    const url = `https://www.google-analytics.com/debug/mp/collect?measurement_id=${googleTagId}&api_secret=${googleTagSecret}`;
+    const url = `https://www.google-analytics.com/mp/collect?measurement_id=${googleTagId}&api_secret=${googleTagSecret}`;
     const body = JSON.stringify({
         client_id: crypto.randomUUID(),
         events: [{
