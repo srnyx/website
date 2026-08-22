@@ -3,6 +3,8 @@ const path = require("path");
 const crypto = require("crypto");
 const config = require("../config.json");
 
+const maxRedirectAnalyticParams = 25;
+
 const googleTag = config["google-tag"];
 const googleTagId = googleTag?.id;
 const googleTagSecret = googleTag?.secret;
@@ -38,16 +40,23 @@ module.exports.trackRedirect = (req, destination) => {
     if (!googleTagId || !googleTagSecret) return;
 
     const url = `https://www.google-analytics.com/mp/collect?measurement_id=${googleTagId}&api_secret=${googleTagSecret}`;
+    const params = {
+        source_path: req.originalUrl,
+        destination: destination,
+        page_location: `${req.protocol}://${req.headers.host}${req.originalUrl}`
+    };
+
+    // Forward every query param (e.g. utm_source, utm_medium, ref, etc.) without hard-coding names
+    for (const [key, value] of Object.entries(req.query)) {
+        if (Object.keys(params).length >= maxRedirectAnalyticParams) break;
+        const name = key.toLowerCase().replace(/[^a-z0-9_]/g, "_").slice(0, 40);
+        if (!name || params[name] !== undefined) continue;
+        params[name] = String(value).slice(0, 100);
+    }
+
     const body = JSON.stringify({
         client_id: crypto.randomUUID(),
-        events: [{
-            name: "redirect",
-            params: {
-                source_path: req.originalUrl,
-                destination: destination,
-                page_location: `${req.protocol}://${req.headers.host}${req.originalUrl}`
-            }
-        }]
+        events: [{name: "redirect", params}]
     });
 
     fetch(url, {method: "POST", body}).catch(err => console.error("Failed to track redirect:", err));
